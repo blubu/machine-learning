@@ -1,0 +1,72 @@
+// Resources
+
+
+***************************************************************************
+
+-- pandas --
+
+import pandas as pd
+
+.Series([data1,data2],index=[1,2]) / to store one dimensional data
+.DataFrame({key1:series1,key2:series2}) / to store two dimensional
+							data
+
+.read_csv(file) / to read data from a csv file
+*axis for row is 0 and columns is 1
+
+.to_csv("file name.csv", index=False) / export the data
+*if index is not set the the index of the data will also be exported
+
+.dtypes / returns the data types
+.columns / returns column names
+.index / returns index
+.describe() / returns statistics about integer data in the table
+.info() / returns some info (index+dtypes)
+.mean() / returns means of integer datas
+.sum() / returns sum
+.head(n) / returns top n rows ( default 5 )
+.tail(n) / returns bottom n rows ( default 5 )
+.loc[n] / returns object at index n
+.iloc[n] / returns object at position n
+.crosstab(column1,column2) / creates a crosstable data
+.groupby([column]).mean() / group by the column and gives mean
+.plot() / for getting the plot of any data
+{ %matplotlib inline
+  import matplotlib.pyplot as plt }
+.hist() / to get a histogram
+
+*missing data is represented as NaN
+
+.fillna(value,inplace=True) / to fill the NaN values with this value 
+*inplace is used to show the data in the table 
+
+.dropna() / to drop the missing datas
+
+*while adding data a series can have any length but a list should
+ have the same length as that of the table
+
+.drop(column,axis=1) / in order to delete a column
+.sample(frac=1) / to take a random shuffled sample
+.reset_index(drop=True) / to reset the index if it is shuffled
+.apply(lambda x:operation on x) / to apply any operation on columns
+
+***************************************************************************
+
+-- numpy --
+
+import numpy as np
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
