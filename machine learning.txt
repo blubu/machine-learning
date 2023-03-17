@@ -30,10 +30,9 @@ import pandas as pd
 .iloc[n] / returns object at position n
 .crosstab(column1,column2) / creates a crosstable data
 .groupby([column]).mean() / group by the column and gives mean
-.plot() / for getting the plot of any data
-{ %matplotlib inline
-  import matplotlib.pyplot as plt }
-.hist() / to get a histogram
+
+.plot(x,y,kind,c) / for getting the plot of any data
+.hist(bins,figsize,subplots) / to get a histogram
 
 *missing data is represented as NaN
 
@@ -49,12 +48,91 @@ import pandas as pd
 .sample(frac=1) / to take a random shuffled sample
 .reset_index(drop=True) / to reset the index if it is shuffled
 .apply(lambda x:operation on x) / to apply any operation on columns
+.date_range(date,periods) / to get a range of dates for the given period
+.cumsum() / to get the cumulative sum
+.astype(type) / to convert datatype to another datatype
 
 ***************************************************************************
 
 -- numpy --
 
 import numpy as np
+*in numpy all datatype is ndarray
+
+.array([1,2,3]) / to create an array
+.linspace(start,stop,n) / gives n evenly spaced data
+
+.shape / returns the shape of array
+.ndim / gives the dimension of the array
+.dtype / returns the data type
+.size / number of elements in the array
+.ones(shape) / array filled with ones
+.zeros(shape) / array filled with zeros
+.arange(start,stop,step) / array in a range
+.random.randint(low,high,size) / create a random array
+.random(shape) ( .random.rand(shape) )
+.random.seed(seed) / random numbers according to the seed
+.random.rand(n) / returns numbers from a normal distribution
+.unique(array) / unique numbers in the array
+.square(array) / to square the array elements
+.add(a1,a2) / add a1 and a2
+.multiply(a1,a2)
+.exp(a), .log(a), .sqrt(a)
+.sum(a), .mean(a), .sin(a)
+.max(a), .min(a)
+.std(a), .var(a)
+
+%timeit -> to time the code
+
+.sort(a) / to sort an array
+.argsort(a) / to get the index of the element in the sorted array
+.argmin(a), .argmax(a) / to get the index of min and max element
+
+
+.reshape(shape)/ to reshape a array
+.T / transpose of an array
+.dot(a1,a2) / to get dot product ( traditional matrix multiplication )
+
+***************************************************************************
+
+-- matplotlib --
+
+%matplotlib inline
+import matplotlib.pyplot as plt -> for plotting different types 
+					     of graphs
+
+.plot(x,y); / to plot a graph
+.show()
+
+.figure() / same as plot
+.add_subplot()
+.add_axes()
+.subplots(figsize=(width,height), nrows, ncols, sharex)
+.suptitle("title") / to add title to the figure
+
+.set(title="", xlabel="", ylabel="") / to create labels
+.set_xlim([l,h]) / to set x limits
+.set_ylim([l,h]) / to set y limits
+.legend() / to add legend to the plot
+.legend().set_visible(True) / make the legend visible
+.savefig("file path") / to save the figure
+
+.scatter(x,y,cmap) / gives scatter plot with cmap color
+.bar(x,y) / gives a bar plot
+.barh(x,y) / gives a horizontal bar plot
+*barh need x and y values to be in a list
+
+.hist(a) / to get a histogram
+.axhline(value,linestyle) / add a horizontal line along the value
+.style.available / to show the available styles
+.style.use(style) / to use a style
+
+from matplotlib.image import imread -> to convert images to numbers
+
+imread("file path") / to convert image to ndarray [ <img src="path"/> ]
+
+
+
 
 
 
