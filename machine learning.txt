@@ -1,5 +1,10 @@
 // Resources
 
+https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html =>
+Estimator Map
+https://scikit-learn.org/stable/modules/model_evaluation.html => Evaluation
+Methods
+https://www.kaggle.com/ => ML Datasets
 
 ***************************************************************************
 
@@ -28,8 +33,10 @@ import pandas as pd
 .tail(n) / returns bottom n rows ( default 5 )
 .loc[n] / returns object at index n
 .iloc[n] / returns object at position n
-.crosstab(column1,column2) / creates a crosstable data
+.crosstab(column1,column2,rownames,colnames) / creates a crosstable data
 .groupby([column]).mean() / group by the column and gives mean
+.value_counts() / to give the count of different values
+.isna() / NaN values
 
 .plot(x,y,kind,c) / for getting the plot of any data
 .hist(bins,figsize,subplots) / to get a histogram
@@ -39,7 +46,7 @@ import pandas as pd
 .fillna(value,inplace=True) / to fill the NaN values with this value 
 *inplace is used to show the data in the table 
 
-.dropna() / to drop the missing datas
+.dropna(subset) / to drop the missing datas in the subset
 
 *while adding data a series can have any length but a list should
  have the same length as that of the table
@@ -51,6 +58,7 @@ import pandas as pd
 .date_range(date,periods) / to get a range of dates for the given period
 .cumsum() / to get the cumulative sum
 .astype(type) / to convert datatype to another datatype
+.get_dummies(data) / to convert data into numerical values
 
 ***************************************************************************
 
@@ -68,6 +76,7 @@ import numpy as np
 .size / number of elements in the array
 .ones(shape) / array filled with ones
 .zeros(shape) / array filled with zeros
+.full(size,data) / to fill array with constant values
 .arange(start,stop,step) / array in a range
 .random.randint(low,high,size) / create a random array
 .random(shape) ( .random.rand(shape) )
@@ -113,6 +122,7 @@ import matplotlib.pyplot as plt -> for plotting different types
 .set(title="", xlabel="", ylabel="") / to create labels
 .set_xlim([l,h]) / to set x limits
 .set_ylim([l,h]) / to set y limits
+.get_ylim() / to get the y limits
 .legend() / to add legend to the plot
 .legend().set_visible(True) / make the legend visible
 .savefig("file path") / to save the figure
@@ -131,6 +141,64 @@ from matplotlib.image import imread -> to convert images to numbers
 
 imread("file path") / to convert image to ndarray [ <img src="path"/> ]
 
+***************************************************************************
+
+-- scikit learn --
+
+from sklearn.ensemble import RandomForestClassifier -> used for
+									 classification
+from sklearn.ensemble import RandomForestRegressor -> used for 
+									predicting numbers
+
+.get_params() / to get the parameters
+.fit(model1,model2) / to fit the models
+.predict(testmodel) / to give predictions
+.score(testdata,testresult) / to score the model ( max value is 1 )
+.predict_proba(testmodel) / returns probability of predictions
+
+
+from sklearn.model_selection import train_test_split -> for training the 									  data
+from sklearn.model_selection import cross_val_score -> for cross validation
+from sklearn.model_selection import RandomizedSearchCV, GridSearchCV
+.best_params_ / gives the best hyperparameters from randomizedcv
+
+*n_estimators, max_depth, max_features, min_samples_split, min_samples_leaf
+
+from sklearn.metrics import classification_report, confusion_matrix,
+				    accuracy_score, mean_absolute_error,
+				    roc_curve, roc_auc_score, r2_score,
+				    plot_confusion_matrix, classification_report,
+				    mean_squared_error, precision_score, f1_score,
+				    recall_score
+
+from sklearn.preprocessing import OneHotEncoder -> to convert categories
+								   to numbers
+
+from sklearn.compose import ColumnTransformer
+.fit_transform(data) / to transform the data
+
+from sklearn.impute import SimpleImputer -> for filling missing data
+
+from sklearn.datasets import load_boston -> to load boston dataset
+
+from sklearn.pipeline import Pipeline
+
+import pickle -> for saving the model
+.dump(model, open("filename.pkl", "wb")) / for saving the model as binary
+.load(open("filename", "rb")) / load a saved model
+
+from joblib import dump, load
+dump(model, filename="name.joblib")
+load(filename)
+
+import warnings
+.filterwarnings("ignore") / to ignore all warnings
+
+import seaborn as sns
+.set(font_scale)
+.haetmap(matrix,annot=True,cbar=False) / to create a heatmap of a 							     rectangular matrix
+
+***************************************************************************
 
 
 
